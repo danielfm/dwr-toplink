@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+Version 0.4
+- Added a bean converter for EclipseLink.
+
+
 Version 0.3
 - The project now depends on DWR 2.x since the the same code works both on
   DWR 2 and DWR 3 without any changes.

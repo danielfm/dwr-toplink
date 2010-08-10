@@ -1,8 +1,8 @@
 DWR-TopLink
 -----------
 
-DWR-TopLink is a TopLink[1]-aware bean converter for DWR[2] that ignores
-non-initialized lazy relationships during the serialization step.
+DWR-TopLink is a TopLink[1]/EclipseLink[2]-aware bean converter for DWR[3] that
+ignores non-initialized lazy relationships during the serialization step.
 
 This is an open source project licenced under the terms of the Apache 2.0
 License and sponsored by Destaquenet Technology Solutions, a brazilian software
@@ -57,11 +57,12 @@ Open the dwr.xml file and do the following changes:
 
     <dwr>
         <init>
-            <!-- Declares the custom bean converter -->
+            <!-- Declares the custom bean converters -->
             <converter id="toplink" class="com.destaquenet.dwrtoplink.TopLinkConverter"/>
+            <converter id="eclipselink" class="com.destaquenet.dwrtoplink.EclipseLinkConverter"/>
         </init>
         <allow>
-            <!-- Uses the custom bean converter to serialize your entities -->
+            <!-- Uses the appropriate bean converter to serialize your entities -->
             <convert converter="toplink" match="your.project.bean.YourBean"/>
         </allow>
     </dwr>
@@ -71,8 +72,9 @@ Links
 -----
 
 [1] TopLink       - http://www.oracle.com/technology/products/ias/toplink/jpa/index.html
-[2] DWR           - http://directwebremoting.org/
-[3] Download page - http://github.com/danielfm/dwr-toplink/downloads/
+[2] EclipseLink   - http://www.eclipse.org/eclipselink/
+[3] DWR           - http://directwebremoting.org/
+[4] Download page - http://github.com/danielfm/dwr-toplink/downloads/
 
 
 Credits
